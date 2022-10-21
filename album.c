@@ -45,6 +45,7 @@ int main(){
         break;
       case 4:
         Dados_Album();
+        break;
     }
   }
 
