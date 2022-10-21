@@ -21,6 +21,7 @@ typedef struct{
 //void dadosAlbum()
 //void folhearAlbum()
 //void comprarEnvelope()
+//void bancaFigurinhas()
 
 int main(){
   //menu
