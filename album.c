@@ -14,13 +14,19 @@ typedef struct{
   //figurinhas faltantes
   //proprirtário
   //porcentagem do album
+  //dinheiro gasto
 }Album;
 
 //void cadastraFigurinha()
+//void dadosAlbum()
 //void folhearAlbum()
 //void comprarEnvelope()
 
 int main(){
   //menu
+  //folhear album
+  //comprar envelope
+  //figurinhas não coladas
+  //dinheiro gasto
   return 0;
 }
