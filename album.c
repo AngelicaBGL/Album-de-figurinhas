@@ -707,11 +707,15 @@ void comprar_envelope(){}
 void figurinhas_nao_coladas(){}
 
 int adicionar_album(Album album[], int quant_alb){
-  int amais;
+ int amais, aux = quant_alb;
   printf("Quantos albuns voce quer adicionar?");
   scanf("%d", &amais);
   quant_alb = quant_alb + amais;
   void *realloc(void *album, unsigned int quant_alb);
+  for (int i=1; i<quant_alb; i++){
+    strcpy(album[0].proprietario, album[i].proprietario);
+  }
+
   printf("Mais %d album(s) foram adicionados\n", amais);
 
   return quant_alb;
