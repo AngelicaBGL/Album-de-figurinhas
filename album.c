@@ -2,6 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 
+//teclas
+#define ESC 's'
+#define DIREITA 'd'
+#define ESQUERDA 'a'
+
+
+//cores
+#define BLK "\e[0;30m"
+#define RED "\e[0;31m"
+#define GRN "\e[0;32m"
+#define YEL "\e[0;33m"
+#define BLU "\e[0;34m"
+#define MAG "\e[0;35m"
+#define CYN "\e[0;36m"
+#define WHT "\e[0;37m"
+#define reset "\e[0m"
+
 typedef struct{
   char codigo[10];
   char titulo[50];
@@ -26,11 +43,648 @@ void limpar_struct(Figurinha figurinha[]){
   }
 }
 
-void folhear_album(){
+void mostra(Figurinha* figurinhas, Album* album, int numero, int total, char secao[]){
+   int quantidade=0;
+   for(int i=0; i<total; i++){
+      quantidade=0;
+      if(strcasecmp(figurinhas[i].secao, secao)==0){
+         for(int j=0; j<numero; j++){
+         if(strcasecmp(album[0].figurinhas_coladas[j],figurinhas[i].codigo)==0){
+            quantidade++;
+         }//if2
+         }//for2
+         if(quantidade<=0){
+            printf(RED);
+         }else{
+            if(strcasecmp(figurinhas[i].tipo,'metalico')==0){
+               printf(YEL);
+            }else{
+               printf(GRN);
+            }//else interno
+            
+         }//else
+         printf("\n%s\n", figurinhas[i].titulo);
+         printf(reset);
+      }//if
+      
+   }//for
+}
+void capa(){
+
+   printf(reset);
+  printf("                           @@@&@@@@@%%%%%%%%%%@@@#\n");
+   printf("                        /@@&@@@@@@@&%%@@@@@@@&&%%@\n");
+   printf("                       @@@@@@@@@%%%%###%%%%%%%%%%%%%%%%%%%%%%%% \n");
+   printf("                     @&@@@@%%@@       #%%%%%%%%%%%%%%%%%%%%%%@\n");
+   printf("                    @@,%%@%%,@          %%%%%%%%#%%%%%%%%%%@@\n");
+   printf("                   @@@@@@%%@            ##%%%%#%%%%%%%%@@\n");
+   printf("                   @@@@&@%%@@           ##%%%%#%%%%%%%%@@\n");
+   printf("                    @@@%%@%%@@           ##%%%%#%%%%%%%%@@\n");
+   printf("                     @&@@@@@@@         ###%%#%%%%%%%%@@\n");
+   printf("                      @&@&@%%@%%@        ##%%##%%%%%%@@\n");
+   printf("                       @&&@@%%@@@      #####%%%%%%@@\n");
+   printf("                        &&&@@@@@@   ###(#%%%%%%@@\n");
+   printf("                          @@@@@@@@@####((%%%%%%@\n");
+   printf("                           @&@@@@@@@@#((#%%&@\n");
+   printf("                           %% @@@@@@@@@###&@ \n");
+   printf("                           %%   @&@@@@@@@@&\n");
+   printf("                              @@&@@@/,@@&\n");
+   printf("                              @(((@@@,@@,@, \n");
+   printf("                            @#((((@@@@&,,,@,\n");
+   printf("                           @@(((((@@,@,@@#@@,\n");
+   printf("                          @#((((((@@@,/&,@@@@ \n");
+   printf("                         @@(((((((@&@@@@(@,,(@ \n");
+   printf("                         @#(((((((@@@@@&&@@@@@\n");
+   printf("                          @@#(((((@@@@@*,,@@@@@ \n");
+   printf("                           %%@@@@@@,@@@,&,@@@@@\n");
+   printf("                              %%@@@,&*,*&@@&& \n");
+   
+
+   printf(WHT" _____   ___   _____      _       __        __   ___    ____    _       ____       ____   _   _   ____  \n");
+   printf("|  ___| |_ _| |  ___|    / \\      \\ \\      / /  / _ \\  |  _ \\  | |     |  _ \\     / ___| | | | | |  _ \\ \n");
+   printf("| |_     | |  | |_      / _ \\      \\ \\ /\\ / /  | | | | | |_) | | |     | | | |   | |     | | | | | |_) |\n");
+   printf("|  _|    | |  |  _|    / ___ \\      \\ V  V /   | |_| | |  _ <  | |___  | |_| |   | |___  | |_| | |  __/\n");
+   printf("|_|     |___| |_|     /_/   \\_\\      \\_/\\_/     \\___/  |_| \\_\\ |_____| |____/     \\____|  \\___/  |_|    \n");
+}
+void simbolos(Figurinha* figurinhas, Album* album){
+   printf(" ___    _         ___    _____  _      _____  ___       ___    _____     ___    _____  ___    _____ \n");
+   printf("(  _`\\ (_)/'\\_/`\\(  _`\\ (  _  )( )    (  _  )(  _`\\    (  _`\\ (  _  )   (  _`\\ (  _  )(  _`\\ (  _  )\n"); 
+   printf("| (_(_)| ||     || (_) )| ( ) || |    | ( ) || (_(_)   | | ) || (_) |   | ( (_)| ( ) || |_) )| (_) |\n");
+   printf("`\\__ \\ | || (_) ||  _ <'| | | || |  _ | | | |`\\__ \\    | | | )|  _  |   | |  _ | | | || ,__/'|  _  |\n");
+   printf("( )_) || || | | || (_) )| (_) || |_( )| (_) |( )_) |   | |_) || | | |   | (_( )| (_) || |    | | | |\n");
+   printf("`\\____)(_)(_) (_)(____/'(_____)(____/'(_____)`\\____)   (____/'(_) (_)   (____/'(_____)(_)    (_) (_)\n");
+
+   mostra(figurinhas, album, 8, 278, 'Content');                                                       
+}
+void estadios_e_bola(Figurinha* figurinhas, Album* album){
+
+   printf("    ___    ___    _____  _____  ___    _  _____  ___       ___       ___    _____  _      _____\n");
+   printf("(  _`\\ (  _`\\ (_   _)(  _  )(  _`\\ (_)(  _  )(  _`\\    (  _`\\    (  _`\\ (  _  )( )    (  _  )\n");
+   printf("| (_(_)| (_(_)  | |  | (_) || | ) || || ( ) || (_(_)   | (_(_)   | (_) )| ( ) || |    | (_) |\n");
+   printf("|  _)_ `\\__ \\   | |  |  _  || | | )| || | | |`\\__ \\    |  _)_    |  _ <'| | | || |  _ |  _  |\n");
+   printf("| (_( )( )_) |  | |  | | | || |_) || || (_) |( )_) |   | (_( )   | (_) )| (_) || |_( )| | | |\n");
+   printf("(____/'`\\____)  (_)  (_) (_)(____/'(_)(_____)`\\____)   (____/'   (____/'(_____)(____/'(_) (_)\n");
+   mostra(figurinhas, album, 10, 278, 'Stadiums');
+   mostra(figurinhas, album, 1, 278, 'Official Match Ball');
+}
+void qatar(Figurinha* figurinhas, Album* album){
+   printf(" _____  _____  _____  _____  ___\n");
+   printf("(  _  )(  _  )(_   _)(  _  )|  _`\\\n");
+   printf("| ( ) || (_) |  | |  | (_) || (_) )\n");
+   printf("| | | ||  _  |  | |  |  _  || ,  /\n");
+   printf("| (('\\|| | | |  | |  | | | || |\\ \\\n");
+   printf("(___\\_)(_) (_)  (_)  (_) (_)(_) (_)\n");   
+   mostra(figurinhas, album, 20, 278, 'Qatar');
+}
+void equador(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  _   _  _____  ___    _____  ___  \n");
+   printf("(  _`\\ (  _  )( ) ( )(  _  )(  _`\\ (  _  )|  _`\\ \n");
+   printf("| (_(_)| ( ) || | | || (_) || | ) || ( ) || (_) )\n");
+   printf("|  _)_ | | | || | | ||  _  || | | )| | | || ,  / \n");
+   printf("| (_( )| (('\\|| (_) || | | || |_) || (_) || |\\ \\ \n");
+   printf("(____/'(___\\_)(_____)(_) (_)(____/'(_____)(_) (_)\n");                                               
+                                                 
+   mostra(figurinhas, album, 20, 278, 'Ecuador');
+}
+void senegal(Figurinha* figurinhas, Album* album){
+   printf(" ___    ___    _   _  ___    ___    _____  _\n");
+   printf("(  _`\\ (  _`\\ ( ) ( )(  _`\\ (  _`\\ (  _  )( )\n");
+   printf("| (_(_)| (_(_)| `\\| || (_(_)| ( (_)| (_) || |\n");
+   printf("`\\__ \\ |  _)_ | , ` ||  _)_ | |___ |  _  || |  _ \n");
+   printf("( )_) || (_( )| |`\\ || (_( )| (_, )| | | || |_( )\n");
+   printf("`\\____)(____/'(_) (_)(____/'(____/'(_) (_)(____/'\n");
+
+   mostra(figurinhas, album, 20, 278, 'Senegal');
+}
+void holanda(Figurinha* figurinhas, Album* album){
+   printf(" _   _  _____  _      _____  _   _  ___    _____ \n");
+   printf("( ) ( )(  _  )( )    (  _  )( ) ( )(  _`\\ (  _  )\n");
+   printf("| |_| || ( ) || |    | (_) || `\\| || | ) || (_) |\n");
+   printf("|  _  || | | || |  _ |  _  || , ` || | | )|  _  |\n");
+   printf("| | | || (_) || |_( )| | | || |`\\ || |_) || | | |\n");
+   printf("(_) (_)(_____)(____/'(_) (_)(_) (_)(____/'(_) (_)\n");                                              
+                                                 
+   mostra(figurinhas, album, 20, 278, 'Netherlands');
+}
+void inglaterra(Figurinha* figurinhas, Album* album){
+   printf(" _  _   _  ___    _      _____  _____  ___    ___    ___    _____ \n");
+   printf("(_)( ) ( )(  _`\\ ( )    (  _  )(_   _)(  _`\\ |  _`\\ |  _`\\ (  _  )\n");
+   printf("| || `\\| || ( (_)| |    | (_) |  | |  | (_(_)| (_) )| (_) )| (_) |\\\n");
+   printf("| || , ` || |___ | |  _ |  _  |  | |  |  _)_ | ,  / | ,  / |  _  |\n");
+   printf("| || |`\\ || (_, )| |_( )| | | |  | |  | (_( )| |\\ \\ | |\\ \\ | | | |\n");
+   printf("(_)(_) (_)(____/'(____/'(_) (_)  (_)  (____/'(_) (_)(_) (_)(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'England');
+}
+void ira(Figurinha* figurinhas, Album* album){
+   printf("            _   _ \n");
+   printf("         /' \\/' )\n");
+   printf("         (_/\\__/' \n\n");
+   printf(" _  ___    _____\n");
+   printf("(_)|  _`\\ (  _  )\n");
+   printf("| || (_) )| (_) |\n");
+   printf("| || ,  / |  _  |\n");
+   printf("| || |\\ \\ | | | |\n");
+   printf("(_)(_) (_)(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Iran');
+}
+void estados_unidos(Figurinha* figurinhas, Album* album){
+   printf(" _   _  ___    _____ \n");
+   printf("( ) ( )(  _`\\ (  _  )\n");
+   printf("| | | || (_(_)| (_) |\n");
+   printf("| | | |`\\__ \\ |  _  |\n");
+   printf("| (_) |( )_) || | | |\n");
+   printf("(_____)`\\____)(_) (_)\n");
+                     
+   mostra(figurinhas, album, 20, 278, 'USA');
+}
+void pais_de_gales(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  _  ___       ___    ___       ___    _____  _      ___    ___   \n");
+   printf("(  _`\\ (  _  )(_)(  _`\\    (  _`\\ (  _`\\    (  _`\\ (  _  )( )    (  _`\\ (  _`\\ \n");
+   printf("| |_) )| (_) || || (_(_)   | | ) || (_(_)   | ( (_)| (_) || |    | (_(_)| (_(_)\n");
+   printf("| ,__/'|  _  || |`\\__ \\    | | | )|  _)_    | |___ |  _  || |  _ |  _)_ `\\__ \\ \n");
+   printf("| |    | | | || |( )_) |   | |_) || (_( )   | (_, )| | | || |_( )| (_( )( )_) |\n");
+   printf("(_)    (_) (_)(_)`\\____)   (____/'(____/'   (____/'(_) (_)(____/'(____/'`\\____)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Wales');
+}
+void argentina(Figurinha* figurinhas, Album* album){
+   printf(" _____  ___    ___    ___    _   _  _____  _  _   _  _____ \n");
+   printf("(  _  )|  _`\\ (  _`\\ (  _`\\ ( ) ( )(_   _)(_)( ) ( )(  _  )\n");
+   printf("| (_) || (_) )| ( (_)| (_(_)| `\\| |  | |  | || `\\| || (_) |\n");
+   printf("|  _  || ,  / | |___ |  _)_ | , ` |  | |  | || , ` ||  _  |\n");
+   printf("| | | || |\\ \\ | (_, )| (_( )| |`\\ |  | |  | || |`\\ || | | |\n");
+   printf("(_) (_)(_) (_)(____/'(____/'(_) (_)  (_)  (_)(_) (_)(_) (_)\n");
+                                                         
+   mostra(figurinhas, album, 20, 278, 'Argentina');
+}
+void arabia_saudita(Figurinha* figurinhas, Album* album){
+   printf(" _____  ___    _____  ___    _  _____     ___    _____  _   _  ___    _  _____  _____ \n");
+   printf("(  _  )|  _`\\ (  _  )(  _`\\ (_)(  _  )   (  _`\\ (  _  )( ) ( )(  _`\\ (_)(_   _)(  _  )\n");
+   printf("| (_) || (_) )| (_) || (_) )| || (_) |   | (_(_)| (_) || | | || | ) || |  | |  | (_) |\n");
+   printf("|  _  || ,  / |  _  ||  _ <'| ||  _  |   `\\__ \\ |  _  || | | || | | )| |  | |  |  _  |\n");
+   printf("| | | || |\\ \\ | | | || (_) )| || | | |   ( )_) || | | || (_) || |_) || |  | |  | | | |\n");
+   printf("(_) (_)(_) (_)(_) (_)(____/'(_)(_) (_)   `\\____)(_) (_)(_____)(____/'(_)  (_)  (_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Saudi Arabia');
+}
+void mexico(Figurinha* figurinhas, Album* album){
+   printf("           __  \n");
+   printf("          /_/ \n\n");
+   printf("        ___    _    _  _  ___    _____ \n");
+   printf("/'\\_/`\\(  _`\\ ( )  ( )(_)(  _`\\ (  _  )\n");
+   printf("|     || (_(_)`\\`\\/'/'| || ( (_)| ( ) |\n");
+   printf("| (_) ||  _)_   >  <  | || |  _ | | | |\n");
+   printf("| | | || (_( ) /'/\\`\\ | || (_( )| (_) |\n");
+   printf("(_) (_)(____/'(_)  (_)(_)(____/'(_____)\n");
+                                       
+   mostra(figurinhas, album, 20, 278, 'Mexico');
+}
+void polonia(Figurinha* figurinhas, Album* album){
+   printf("                       __  \n");
+   printf("                      /  \\ \n");
+   printf("                     (_/\\_) \n\n");
+   printf(" ___    _____  _      _____  _   _  _  _____ \n");
+   printf("(  _`\\ (  _  )( )    (  _  )( ) ( )(_)(  _  )\n");
+   printf("| |_) )| ( ) || |    | ( ) || `\\| || || (_) |\n");
+   printf("| ,__/'| | | || |  _ | | | || , ` || ||  _  |\n");
+   printf("| |    | (_) || |_( )| (_) || |`\\ || || | | |\n");              
+   printf("(_)    (_____)(____/'(_____)(_) (_)(_)(_) (_)\n");                                           
+                                             
+   mostra(figurinhas, album, 20, 278, 'Poland');
+}
+void franca(Figurinha* figurinhas, Album* album){
+   printf(" ___    ___    _____  _   _  ___    _____ \n");
+   printf("(  _`\\ |  _`\\ (  _  )( ) ( )(  _`\\ (  _  )\n");
+   printf("| (_(_)| (_) )| (_) || `\\| || ( (_)| (_) |\n");
+   printf("|  _)  | ,  / |  _  || , ` || |  _ |  _  |\n");
+   printf("| |    | |\\ \\ | | | || |`\\ || (_( )| | | |\n");
+   printf("(_)    (_) (_)(_) (_)(_) (_)(____/'(_) (_)\n");
+   printf("                              \\__, \\\n");
+   printf("                              (____/  \n");
+
+   mostra(figurinhas, album, 20, 278, 'France');
+}
+void australia(Figurinha* figurinhas, Album* album){
+   printf("                                        __\n");
+   printf("                                       /_/\n\n");
+   printf(" _____  _   _  ___    _____  ___    _____  _      _  _____ \n");
+   printf("(  _  )( ) ( )(  _`\\ (_   _)|  _`\\ (  _  )( )    (_)(  _  )\n");
+   printf("| (_) || | | || (_(_)  | |  | (_) )| (_) || |    | || (_) |\n");
+   printf("|  _  || | | |`\\__ \\   | |  | ,  / |  _  || |  _ | ||  _  |\n");
+   printf("| | | || (_) |( )_) |  | |  | |\\ \\ | | | || |_( )| || | | |\n");
+   printf("(_) (_)(_____)`\\____)  (_)  (_) (_)(_) (_)(____/'(_)(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Australia');
+}
+void dinamarca(Figurinha* figurinhas, Album* album){
+   printf(" ___    _  _   _  _____         _____  ___    ___    _____ \n");
+   printf("(  _`\\ (_)( ) ( )(  _  )/'\\_/`\\(  _  )|  _`\\ (  _`\\ (  _  )\n");
+   printf("| | ) || || `\\| || (_) ||     || (_) || (_) )| ( (_)| (_) |\n");
+   printf("| | | )| || , ` ||  _  || (_) ||  _  || ,  / | |  _ |  _  |\n");
+   printf("| |_) || || |`\\ || | | || | | || | | || |\\ \\ | (_( )| | | |\n");
+   printf("(____/'(_)(_) (_)(_) (_)(_) (_)(_) (_)(_) (_)(____/'(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Denmark');
+}
+void tunisia(Figurinha* figurinhas, Album* album){
+   printf("                      __  \n");
+   printf("                     /_/\n\n");
+   printf(" _____  _   _  _   _  _  ___    _  _____ \n");
+   printf("(_   _)( ) ( )( ) ( )(_)(  _`\\ (_)(  _  )\n");
+   printf("  | |  | | | || `\\| || || (_(_)| || (_) |\n");
+   printf("  | |  | | | || , ` || |`\\__ \\ | ||  _  |\n");
+   printf("  | |  | (_) || |`\\ || |( )_) || || | | |\n");
+   printf("  (_)  (_____)(_) (_)(_)`\\____)(_)(_) (_)\n");
+                                    
+   mostra(figurinhas, album, 20, 278, 'Tunisia');
+}
+void espanha(Figurinha* figurinhas, Album* album){
+   printf(" ___    ___    ___    _____  _   _  _   _  _____ \n");
+   printf("(  _`\\ (  _`\\ (  _`\\ (  _  )( ) ( )( ) ( )(  _  )\n");
+   printf("| (_(_)| (_(_)| |_) )| (_) || `\\| || |_| || (_) |\n");
+   printf("|  _)_ `\\__ \\ | ,__/'|  _  || , ` ||  _  ||  _  |\n");
+   printf("| (_( )( )_) || |    | | | || |`\\ || | | || | | |\n");
+   printf("(____/'`\\____)(_)    (_) (_)(_) (_)(_) (_)(_) (_)\n");
+
+  mostra(figurinhas, album, 20, 278, 'Spain');
+}
+void costa_rica(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  ___    _____  _____     ___    _  ___    _____ \n");
+   printf("(  _`\\ (  _  )(  _`\\ (_   _)(  _  )   |  _`\\ (_)(  _`\\ (  _  )\n");
+   printf("| ( (_)| ( ) || (_(_)  | |  | (_) |   | (_) )| || ( (_)| (_) |\n");
+   printf("| |  _ | | | |`\\__ \\   | |  |  _  |   | ,  / | || |  _ |  _  |\n");
+   printf("| (_( )| (_) |( )_) |  | |  | | | |   | |\\ \\ | || (_( )| | | |\n");
+   printf("(____/'(_____)`\\____)  (_)  (_) (_)   (_) (_)(_)(____/'(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Costa Rica');
+}
+void alemanha(Figurinha* figurinhas, Album* album){
+   printf(" _____  _      ___           _____  _   _  _   _  _____ \n");
+   printf("(  _  )( )    (  _`\\ /'\\_/`\\(  _  )( ) ( )( ) ( )(  _  )\n");
+   printf("| (_) || |    | (_(_)|     || (_) || `\\| || |_| || (_) |\n");
+   printf("|  _  || |  _ |  _)_ | (_) ||  _  || , ` ||  _  ||  _  |\n");
+   printf("| | | || |_( )| (_( )| | | || | | || |`\\ || | | || | | |\n");
+   printf("(_) (_)(____/'(____/'(_) (_)(_) (_)(_) (_)(_) (_)(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Germany');
+}
+void japao(Figurinha* figurinhas, Album* album){
+   printf("                        _   _ \n");
+   printf("                      /' \\/' )\n");
+   printf("                     (_/\\__/' \n\n");
+   printf(" _____  _____  ___    _____  _____ \n");
+   printf("(___  )(  _  )(  _`\\ (  _  )(  _  )\n");
+   printf("    | || (_) || |_) )| (_) || ( ) |\n");
+   printf(" _  | ||  _  || ,__/'|  _  || | | |\n");
+   printf("( )_| || | | || |    | | | || (_) |\n");
+   printf("`\\___/'(_) (_)(_)    (_) (_)(_____)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Japao');
+}
+void belgica(Figurinha* figurinhas, Album* album){
+   printf("          __  \n");
+   printf("         /_/\n\n");
+   printf(" ___    ___    _      ___    _  ___    _____ \n");
+   printf("(  _`\\ (  _`\\ ( )    (  _`\\ (_)(  _`\\ (  _  )\n");
+   printf("| (_) )| (_(_)| |    | ( (_)| || ( (_)| (_) |\n");
+   printf("|  _ <'|  _)_ | |  _ | |___ | || |  _ |  _  |\n");
+   printf("| (_) )| (_( )| |_( )| (_, )| || (_( )| | | |\n");
+   printf("(____/'(____/'(____/'(____/'(_)(____/'(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Belgium');
+}
+void canada(Figurinha* figurinhas, Album* album){
+   printf("                                      __  \n");
+   printf("                                     /_/\n\n");
+   printf(" ___    _____  _   _  _____  ___    _____ \n");
+   printf("(  _`\\ (  _  )( ) ( )(  _  )(  _`\\ (  _  )\n");
+   printf("| ( (_)| (_) || `\\| || (_) || | ) || (_) |\n");
+   printf("| |  _ |  _  || , ` ||  _  || | | )|  _  |\n");
+   printf("| (_( )| | | || |`\\ || | | || |_) || | | |\n");
+   printf("(____/'(_) (_)(_) (_)(_) (_)(____/'(_) (_)\n");                                       
+                                    
+   mostra(figurinhas, album, 20, 278, 'Canada');
+}
+void marrocos(Figurinha* figurinhas, Album* album){
+   printf("        _____  ___    ___    _____  ___    _____  ___   \n");
+   printf("/'\\_/`\\(  _  )|  _`\\ |  _`\\ (  _  )(  _`\\ (  _  )(  _`\\ \n");
+   printf("|     || (_) || (_) )| (_) )| ( ) || ( (_)| ( ) || (_(_)\n");
+   printf("| (_) ||  _  || ,  / | ,  / | | | || |  _ | | | |`\\__ \\ \n");
+   printf("| | | || | | || |\\ \\ | |\\ \\ | (_) || (_( )| (_) |( )_) |\n");
+   printf("(_) (_)(_) (_)(_) (_)(_) (_)(_____)(____/'(_____)`\\____)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Marrocco');
+}
+void croacia(Figurinha* figurinhas, Album* album){
+   printf("                         __  \n");
+   printf("                        /_/\n\n");
+   printf(" ___    ___    _____  _____  ___    _  _____\n");
+   printf("(  _`\\ |  _`\\ (  _  )(  _  )(  _`\\ (_)(  _  )\n");
+   printf("| ( (_)| (_) )| ( ) || (_) || ( (_)| || (_) |\n");
+   printf("| |  _ | ,  / | | | ||  _  || |  _ | ||  _  |\n");
+   printf("| (_( )| |\\ \\ | (_) || | | || (_( )| || | | |\n");
+   printf("(____/'(_) (_)(_____)(_) (_)(____/'(_)(_) (_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Croatia');
+}
+void brasil(Figurinha* figurinhas, Album* album){
+   printf(" ___    ___    _____  ___    _  _   \n");
+   printf("(  _`\\ |  _`\\ (  _  )(  _`\\ (_)( ) \n");
+   printf("| (_) )| (_) )| (_) || (_(_)| || |  \n");
+   printf("|  _ <'| ,  / |  _  |`\\__ \\ | || |  _ \n");
+   printf("| (_) )| |\\ \\ | | | |( )_) || || |_( )\n");
+   printf("(____/'(_) (_)(_) (_)`\\____)(_)(____/'\n");
+
+   mostra(figurinhas, album, 20, 278, 'Brazil');
+}
+void servia(Figurinha* figurinhas, Album* album){
+   printf("          __  \n");
+   printf("         /_/\n");
+   printf(" ___    ___    ___    _   _  _  _____ \n");
+   printf("(  _`\\ (  _`\\ |  _`\\ ( ) ( )(_)(  _  )\n");
+   printf("| (_(_)| (_(_)| (_) )| | | || || (_) |\n");
+   printf("`\\__ \\ |  _)_ | ,  / | | | || ||  _  |\n");
+   printf("( )_) || (_( )| |\\ \\ | \\_/ || || | | |\n");
+   printf("`\\____)(____/'(_) (_)`\\___/'(_)(_) (_)\n");
+   
+
+   mostra(figurinhas, album, 20, 278, 'Serbia');
+}
+void suica(Figurinha* figurinhas, Album* album){
+   printf("                __  \n");
+   printf("               /_/\n\n");
+   printf(" ___    _   _  _  ___    _____ \n");
+   printf("(  _`\\ ( ) ( )(_)(  _`\\ (  _  )\n");
+   printf("| (_(_)| | | || || ( (_)| (_) |\n");
+   printf("`\\__ \\ | | | || || |  _ |  _  |\n");
+   printf("( )_) || (_) || || (_( )| | | |\n");
+   printf("`\\____)(_____)(_)(____/'(_) (_)\n");
+   printf("                  \\__, \\n");
+   printf("                  (____/\n");
+
+   mostra(figurinhas, album, 20, 278, 'Switzerland');
+}
+void camaroes(Figurinha* figurinhas, Album* album){
+   printf("                                       _   _ \n");
+   printf("                                     /' \\/' )\n");
+   printf("                                    (_/\\__/'\n");
+   printf(" ___    _____         _____  ___    _____  ___    ___  \n");
+   printf("(  _`\\ (  _  )/'\\_/`\\(  _  )|  _`\\ (  _  )(  _`\\ (  _`\\ \n");
+   printf("| ( (_)| (_) ||     || (_) || (_) )| ( ) || (_(_)| (_(_)\n");
+   printf("| |  _ |  _  || (_) ||  _  || ,  / | | | ||  _)_ `\\__ \\ \n");
+   printf("| (_( )| | | || | | || | | || |\\ \\ | (_) || (_( )( )_) |\n");
+   printf("(____/'(_) (_)(_) (_)(_) (_)(_) (_)(_____)(____/'`\\____) \n");
+
+   mostra(figurinhas, album, 20, 278, 'Cameroon');
+}
+void portugal(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  ___    _____  _   _  ___    _____  _  \n");
+   printf("(  _`\\ (  _  )|  _`\\ (_   _)( ) ( )(  _`\\ (  _  )( ) \n");
+   printf("| |_) )| ( ) || (_) )  | |  | | | || ( (_)| (_) || | \n");
+   printf("| ,__/'| | | || ,  /   | |  | | | || |___ |  _  || |  _\n");
+   printf("| |    | (_) || |\\ \\   | |  | (_) || (_, )| | | || |_( )\n");
+   printf("(_)    (_____)(_) (_)  (_)  (_____)(____/'(_) (_)(____/'\n");                                                     
+
+   mostra(figurinhas, album, 20, 278, 'Portugal');
+}
+void gana(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  _   _  _____ \n");
+   printf("(  _`\\ (  _  )( ) ( )(  _  )\n");
+   printf("| ( (_)| (_) || `\\| || (_) |\n");
+   printf("| |___ |  _  || , ` ||  _  |\n");
+   printf("| (_, )| | | || |`\\ || | | |\n");
+   printf("(____/'(_) (_)(_) (_)(_) (_)\n");                          
+
+   mostra(figurinhas, album, 20, 278, 'Ghana');
+}
+void uruguai(Figurinha* figurinhas, Album* album){
+   printf(" _   _  ___    _   _  ___    _   _  _____  _ \n");
+   printf("( ) ( )|  _`\\ ( ) ( )(  _`\\ ( ) ( )(  _  )(_)\n");
+   printf("| | | || (_) )| | | || ( (_)| | | || (_) || |\n");
+   printf("| | | || ,  / | | | || |___ | | | ||  _  || |\n");
+   printf("| (_) || |\\ \\ | (_) || (_, )| (_) || | | || |\n");
+   printf("(_____)(_) (_)(_____)(____/'(_____)(_) (_)(_)\n");
+
+   mostra(figurinhas, album, 20, 278, 'Uruguay');
+}
+
+void coreia_do_sul(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  ___    ___    _  _____     ___    _____     ___    _   _  _ \n");
+   printf("(  _`\\ (  _  )|  _`\\ (  _`\\ (_)(  _  )   (  _`\\ (  _  )   (  _`\\ ( ) ( )( )    \n");
+   printf("| ( (_)| ( ) || (_) )| (_(_)| || (_) |   | | ) || ( ) |   | (_(_)| | | || |    \n");
+   printf("| |  _ | | | || ,  / |  _)_ | ||  _  |   | | | )| | | |   `\\__ \\ | | | || |  _ \n");
+   printf("| (_( )| (_) || |\\ \\ | (_( )| || | | |   | |_) || (_) |   ( )_) || (_) || |_( )\n");
+   printf("(____/'(_____)(_) (_)(____/'(_)(_) (_)   (____/'(_____)   `\\____)(_____)(____/'\n");
+    
+   mostra(figurinhas, album, 20, 278, 'Korea Republic');
+}
+void museu_da_fifa(Figurinha* figurinhas, Album* album){
+   printf("        _   _  ___    ___    _   _     ___    _____     ___    _  ___    _____ \n");
+   printf("/'\\_/`\\( ) ( )(  _`\\ (  _`\\ ( ) ( )   (  _`\\ (  _  )   (  _`\\ (_)(  _`\\ (  _  )\n");
+   printf("|     || | | || (_(_)| (_(_)| | | |   | | ) || (_) |   | (_(_)| || (_(_)| (_) |\n");
+   printf("| (_) || | | |`\\__ \\ |  _)_ | | | |   | | | )|  _  |   |  _)  | ||  _)  |  _  |\n");
+   printf("| | | || (_) |( )_) || (_( )| (_) |   | |_) || | | |   | |    | || |    | | | |\n");
+   printf("(_) (_)(_____)`\____)(____/'(_____)   (____/'(_) (_)   (_)    (_)(_)    (_) (_)\n");
+                                                                          
+   mostra(figurinhas, album, 11, 278, 'FIFA Museum');
+}
+void coca_cola(Figurinha* figurinhas, Album* album){
+   printf(" ___    _____  ___    _____          ___    _____  _      _____ \n");
+   printf("(  _`\\ (  _  )(  _`\\ (  _  )        (  _`\\ (  _  )( )    (  _  )\n");
+   printf("| ( (_)| ( ) || ( (_)| (_) | ______ | ( (_)| ( ) || |    | (_) |\n");
+   printf("| |  _ | | | || |  _ |  _  |(______)| |  _ | | | || |  _ |  _  |\n");
+   printf("| (_( )| (_) || (_( )| | | |        | (_( )| (_) || |_( )| | | |\n");
+   printf("(____/'(_____)(____/'(_) (_)        (____/'(_____)(____/'(_) (_)\n");  
+                                                                
+   mostra(figurinhas, album, 20, 278, 'CocanormalCola Team Believers');
+}
+
+void folhear_album(Figurinha* figurinhas, Album* album){
   int seletor;
   printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
   printf("Qual album deseja folhear?");
   scanf("%d", &seletor);
+  char tecla;
+   int pagina=0;
+
+   capa();
+   printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+
+
+   do{
+      
+      scanf("%c", &tecla);
+      setbuf(stdin,NULL);
+
+      if(tecla==ESQUERDA){
+         pagina--;
+      }
+      if(tecla==DIREITA){
+         pagina++;
+      }
+      if(pagina<0){
+         pagina=0;
+      }
+      if(pagina>36){
+         pagina=36;
+      }
+      switch(pagina){
+         case 0:
+            capa();
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 1:
+            simbolos(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 2:
+            estadios_e_bola(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 3:
+            qatar(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 4:
+            equador(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 5:
+            senegal(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 6:
+            holanda(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 7:
+            inglaterra(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 8:
+            ira(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 9:
+            estados_unidos(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 10:
+            pais_de_gales(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 11:
+            argentina(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 12:
+            arabia_saudita(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 13:
+            mexico(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 14:
+            polonia(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 15:
+            franca(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 16:
+            australia(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 17:
+            dinamarca(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 18:
+            tunisia(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 19:
+            espanha(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 20:
+            costa_rica(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 21:
+            alemanha(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 22:
+            japao(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 23:
+            belgica(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 24:
+            canada(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 25:
+            marrocos(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 26:
+            croacia(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 27:
+            brasil(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 28:
+            servia(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 29:
+            suica(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 30:
+            camaroes(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 31:
+            portugal(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 32:
+            gana(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 33:
+            uruguai(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 34:
+            coreia_do_sul(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 35:
+            museu_da_fifa(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+         case 36:
+            coca_cola(figurinhas, album);
+            printf(reset"<- (a)                 (d) ->         (s) Sair\n");
+            break;
+
+
+      }
+
+   }while(tecla!=ESC);
+
 }
 
 void dados_album(Album album[]){
