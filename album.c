@@ -536,150 +536,187 @@ void folhear_album(Figurinha* figurinha, Album* album){
       }
       switch(pagina){
          case 0:
+            system("clear");
             capa();
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 1:
+            system("clear");
             simbolos(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 2:
+            system("clear");
             estadios_e_bola(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 3:
+            system("clear");
             qatar(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 4:
+            system("clear");
             equador(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 5:
+            system("clear");
             senegal(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 6:
+            system("clear");
             holanda(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 7:
+            system("clear");
             inglaterra(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 8:
+            system("clear");
             ira(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 9:
+            system("clear");
             estados_unidos(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 10:
+            system("clear");
             pais_de_gales(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 11:
+            system("clear");
             argentina(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 12:
+            system("clear");
             arabia_saudita(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 13:
+            system("clear");
             mexico(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 14:
+            system("clear");
             polonia(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 15:
+            system("clear");
             franca(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 16:
+            system("clear");
             australia(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 17:
+            system("clear");
             dinamarca(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 18:
+            system("clear");
             tunisia(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 19:
+            system("clear");
             espanha(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 20:
+            system("clear");
             costa_rica(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 21:
+            system("clear");
             alemanha(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 22:
+            system("clear");
             japao(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 23:
+            system("clear");
             belgica(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 24:
+            system("clear");
             canada(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 25:
+            system("clear");
             marrocos(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 26:
+            system("clear");
             croacia(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 27:
+            system("clear");
             brasil(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 28:
+            system("clear");
             servia(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 29:
+            system("clear");
             suica(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 30:
+            system("clear");
             camaroes(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 31:
+            system("clear");
             portugal(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 32:
+            system("clear");
             gana(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 33:
+            system("clear");
             uruguai(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 34:
+            system("clear");
             coreia_do_sul(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 35:
+            system("clear");
             museu_da_fifa(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 36:
+            system("clear");
             coca_cola(figurinha, album);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
