@@ -110,7 +110,7 @@ void capa(){
    printf("|  _|    | |  |  _|    / ___ \\      \\ V  V /   | |_| | |  _ <  | |___  | |_| |   | |___  | |_| | |  __/\n");
    printf("|_|     |___| |_|     /_/   \\_\\      \\_/\\_/     \\___/  |_| \\_\\ |_____| |____/     \\____|  \\___/  |_|    \n");
 }
-void simbolos(Figurinha* figurinha, Album* album){
+void simbolos(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _         ___    _____  _      _____  ___       ___    _____     ___    _____  ___    _____ \n");
    printf("(  _`\\ (_)/'\\_/`\\(  _`\\ (  _  )( )    (  _  )(  _`\\    (  _`\\ (  _  )   (  _`\\ (  _  )(  _`\\ (  _  )\n"); 
    printf("| (_(_)| ||     || (_) )| ( ) || |    | ( ) || (_(_)   | | ) || (_) |   | ( (_)| ( ) || |_) )| (_) |\n");
@@ -120,7 +120,7 @@ void simbolos(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 8, 278, 'Content');                                                       
 }
-void estadios_e_bola(Figurinha* figurinha, Album* album){
+void estadios_e_bola(Figurinha* figurinha, Album* album,int quant_fig){
 
    printf("    ___    ___    _____  _____  ___    _  _____  ___       ___       ___    _____  _      _____\n");
    printf("(  _`\\ (  _`\\ (_   _)(  _  )(  _`\\ (_)(  _  )(  _`\\    (  _`\\    (  _`\\ (  _  )( )    (  _  )\n");
@@ -131,7 +131,7 @@ void estadios_e_bola(Figurinha* figurinha, Album* album){
    mostra(figurinhas, album, 10, 278, 'Stadiums');
    mostra(figurinhas, album, 1, 278, 'Official Match Ball');
 }
-void qatar(Figurinha* figurinha, Album* album){
+void qatar(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _____  _____  _____  _____  ___\n");
    printf("(  _  )(  _  )(_   _)(  _  )|  _`\\\n");
    printf("| ( ) || (_) |  | |  | (_) || (_) )\n");
@@ -140,7 +140,7 @@ void qatar(Figurinha* figurinha, Album* album){
    printf("(___\\_)(_) (_)  (_)  (_) (_)(_) (_)\n");   
    mostra(figurinhas, album, 20, 278, 'Qatar');
 }
-void equador(Figurinha* figurinha, Album* album){
+void equador(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  _   _  _____  ___    _____  ___  \n");
    printf("(  _`\\ (  _  )( ) ( )(  _  )(  _`\\ (  _  )|  _`\\ \n");
    printf("| (_(_)| ( ) || | | || (_) || | ) || ( ) || (_) )\n");
@@ -150,7 +150,7 @@ void equador(Figurinha* figurinha, Album* album){
                                                  
    mostra(figurinhas, album, 20, 278, 'Ecuador');
 }
-void senegal(Figurinha* figurinha, Album* album){
+void senegal(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    ___    _   _  ___    ___    _____  _\n");
    printf("(  _`\\ (  _`\\ ( ) ( )(  _`\\ (  _`\\ (  _  )( )\n");
    printf("| (_(_)| (_(_)| `\\| || (_(_)| ( (_)| (_) || |\n");
@@ -160,7 +160,7 @@ void senegal(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Senegal');
 }
-void holanda(Figurinha* figurinha, Album* album){
+void holanda(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _   _  _____  _      _____  _   _  ___    _____ \n");
    printf("( ) ( )(  _  )( )    (  _  )( ) ( )(  _`\\ (  _  )\n");
    printf("| |_| || ( ) || |    | (_) || `\\| || | ) || (_) |\n");
@@ -170,7 +170,7 @@ void holanda(Figurinha* figurinha, Album* album){
                                                  
    mostra(figurinhas, album, 20, 278, 'Netherlands');
 }
-void inglaterra(Figurinha* figurinha, Album* album){
+void inglaterra(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _  _   _  ___    _      _____  _____  ___    ___    ___    _____ \n");
    printf("(_)( ) ( )(  _`\\ ( )    (  _  )(_   _)(  _`\\ |  _`\\ |  _`\\ (  _  )\n");
    printf("| || `\\| || ( (_)| |    | (_) |  | |  | (_(_)| (_) )| (_) )| (_) |\\\n");
@@ -180,7 +180,7 @@ void inglaterra(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'England');
 }
-void ira(Figurinha* figurinha, Album* album){
+void ira(Figurinha* figurinha, Album* album,int quant_fig){
    printf("            _   _ \n");
    printf("         /' \\/' )\n");
    printf("         (_/\\__/' \n\n");
@@ -193,7 +193,7 @@ void ira(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Iran');
 }
-void estados_unidos(Figurinha* figurinha, Album* album){
+void estados_unidos(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _   _  ___    _____ \n");
    printf("( ) ( )(  _`\\ (  _  )\n");
    printf("| | | || (_(_)| (_) |\n");
@@ -203,7 +203,7 @@ void estados_unidos(Figurinha* figurinha, Album* album){
                      
    mostra(figurinhas, album, 20, 278, 'USA');
 }
-void pais_de_gales(Figurinha* figurinha, Album* album){
+void pais_de_gales(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  _  ___       ___    ___       ___    _____  _      ___    ___   \n");
    printf("(  _`\\ (  _  )(_)(  _`\\    (  _`\\ (  _`\\    (  _`\\ (  _  )( )    (  _`\\ (  _`\\ \n");
    printf("| |_) )| (_) || || (_(_)   | | ) || (_(_)   | ( (_)| (_) || |    | (_(_)| (_(_)\n");
@@ -213,7 +213,7 @@ void pais_de_gales(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Wales');
 }
-void argentina(Figurinha* figurinha, Album* album){
+void argentina(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _____  ___    ___    ___    _   _  _____  _  _   _  _____ \n");
    printf("(  _  )|  _`\\ (  _`\\ (  _`\\ ( ) ( )(_   _)(_)( ) ( )(  _  )\n");
    printf("| (_) || (_) )| ( (_)| (_(_)| `\\| |  | |  | || `\\| || (_) |\n");
@@ -223,7 +223,7 @@ void argentina(Figurinha* figurinha, Album* album){
                                                          
    mostra(figurinhas, album, 20, 278, 'Argentina');
 }
-void arabia_saudita(Figurinha* figurinha, Album* album){
+void arabia_saudita(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _____  ___    _____  ___    _  _____     ___    _____  _   _  ___    _  _____  _____ \n");
    printf("(  _  )|  _`\\ (  _  )(  _`\\ (_)(  _  )   (  _`\\ (  _  )( ) ( )(  _`\\ (_)(_   _)(  _  )\n");
    printf("| (_) || (_) )| (_) || (_) )| || (_) |   | (_(_)| (_) || | | || | ) || |  | |  | (_) |\n");
@@ -233,7 +233,7 @@ void arabia_saudita(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Saudi Arabia');
 }
-void mexico(Figurinha* figurinha, Album* album){
+void mexico(Figurinha* figurinha, Album* album,int quant_fig){
    printf("           __  \n");
    printf("          /_/ \n\n");
    printf("        ___    _    _  _  ___    _____ \n");
@@ -245,7 +245,7 @@ void mexico(Figurinha* figurinha, Album* album){
                                        
    mostra(figurinhas, album, 20, 278, 'Mexico');
 }
-void polonia(Figurinha* figurinha, Album* album){
+void polonia(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                       __  \n");
    printf("                      /  \\ \n");
    printf("                     (_/\\_) \n\n");
@@ -258,7 +258,7 @@ void polonia(Figurinha* figurinha, Album* album){
                                              
    mostra(figurinhas, album, 20, 278, 'Poland');
 }
-void franca(Figurinha* figurinha, Album* album){
+void franca(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    ___    _____  _   _  ___    _____ \n");
    printf("(  _`\\ |  _`\\ (  _  )( ) ( )(  _`\\ (  _  )\n");
    printf("| (_(_)| (_) )| (_) || `\\| || ( (_)| (_) |\n");
@@ -270,7 +270,7 @@ void franca(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'France');
 }
-void australia(Figurinha* figurinha, Album* album){
+void australia(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                                        __\n");
    printf("                                       /_/\n\n");
    printf(" _____  _   _  ___    _____  ___    _____  _      _  _____ \n");
@@ -282,7 +282,7 @@ void australia(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Australia');
 }
-void dinamarca(Figurinha* figurinha, Album* album){
+void dinamarca(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _  _   _  _____         _____  ___    ___    _____ \n");
    printf("(  _`\\ (_)( ) ( )(  _  )/'\\_/`\\(  _  )|  _`\\ (  _`\\ (  _  )\n");
    printf("| | ) || || `\\| || (_) ||     || (_) || (_) )| ( (_)| (_) |\n");
@@ -292,7 +292,7 @@ void dinamarca(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Denmark');
 }
-void tunisia(Figurinha* figurinha, Album* album){
+void tunisia(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                      __  \n");
    printf("                     /_/\n\n");
    printf(" _____  _   _  _   _  _  ___    _  _____ \n");
@@ -304,7 +304,7 @@ void tunisia(Figurinha* figurinha, Album* album){
                                     
    mostra(figurinhas, album, 20, 278, 'Tunisia');
 }
-void espanha(Figurinha* figurinha, Album* album){
+void espanha(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    ___    ___    _____  _   _  _   _  _____ \n");
    printf("(  _`\\ (  _`\\ (  _`\\ (  _  )( ) ( )( ) ( )(  _  )\n");
    printf("| (_(_)| (_(_)| |_) )| (_) || `\\| || |_| || (_) |\n");
@@ -314,7 +314,7 @@ void espanha(Figurinha* figurinha, Album* album){
 
   mostra(figurinhas, album, 20, 278, 'Spain');
 }
-void costa_rica(Figurinha* figurinha, Album* album){
+void costa_rica(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  ___    _____  _____     ___    _  ___    _____ \n");
    printf("(  _`\\ (  _  )(  _`\\ (_   _)(  _  )   |  _`\\ (_)(  _`\\ (  _  )\n");
    printf("| ( (_)| ( ) || (_(_)  | |  | (_) |   | (_) )| || ( (_)| (_) |\n");
@@ -324,7 +324,7 @@ void costa_rica(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Costa Rica');
 }
-void alemanha(Figurinha* figurinha, Album* album){
+void alemanha(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _____  _      ___           _____  _   _  _   _  _____ \n");
    printf("(  _  )( )    (  _`\\ /'\\_/`\\(  _  )( ) ( )( ) ( )(  _  )\n");
    printf("| (_) || |    | (_(_)|     || (_) || `\\| || |_| || (_) |\n");
@@ -334,7 +334,7 @@ void alemanha(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Germany');
 }
-void japao(Figurinha* figurinha, Album* album){
+void japao(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                        _   _ \n");
    printf("                      /' \\/' )\n");
    printf("                     (_/\\__/' \n\n");
@@ -347,7 +347,7 @@ void japao(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Japao');
 }
-void belgica(Figurinha* figurinha, Album* album){
+void belgica(Figurinha* figurinha, Album* album,int quant_fig){
    printf("          __  \n");
    printf("         /_/\n\n");
    printf(" ___    ___    _      ___    _  ___    _____ \n");
@@ -359,7 +359,7 @@ void belgica(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Belgium');
 }
-void canada(Figurinha* figurinha, Album* album){
+void canada(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                                      __  \n");
    printf("                                     /_/\n\n");
    printf(" ___    _____  _   _  _____  ___    _____ \n");
@@ -371,7 +371,7 @@ void canada(Figurinha* figurinha, Album* album){
                                     
    mostra(figurinhas, album, 20, 278, 'Canada');
 }
-void marrocos(Figurinha* figurinha, Album* album){
+void marrocos(Figurinha* figurinha, Album* album,int quant_fig){
    printf("        _____  ___    ___    _____  ___    _____  ___   \n");
    printf("/'\\_/`\\(  _  )|  _`\\ |  _`\\ (  _  )(  _`\\ (  _  )(  _`\\ \n");
    printf("|     || (_) || (_) )| (_) )| ( ) || ( (_)| ( ) || (_(_)\n");
@@ -381,7 +381,7 @@ void marrocos(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Marrocco');
 }
-void croacia(Figurinha* figurinha, Album* album){
+void croacia(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                         __  \n");
    printf("                        /_/\n\n");
    printf(" ___    ___    _____  _____  ___    _  _____\n");
@@ -393,7 +393,7 @@ void croacia(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Croatia');
 }
-void brasil(Figurinha* figurinha, Album* album){
+void brasil(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    ___    _____  ___    _  _   \n");
    printf("(  _`\\ |  _`\\ (  _  )(  _`\\ (_)( ) \n");
    printf("| (_) )| (_) )| (_) || (_(_)| || |  \n");
@@ -403,7 +403,7 @@ void brasil(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Brazil');
 }
-void servia(Figurinha* figurinha, Album* album){
+void servia(Figurinha* figurinha, Album* album,int quant_fig){
    printf("          __  \n");
    printf("         /_/\n");
    printf(" ___    ___    ___    _   _  _  _____ \n");
@@ -416,7 +416,7 @@ void servia(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Serbia');
 }
-void suica(Figurinha* figurinha, Album* album){
+void suica(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                __  \n");
    printf("               /_/\n\n");
    printf(" ___    _   _  _  ___    _____ \n");
@@ -430,7 +430,7 @@ void suica(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Switzerland');
 }
-void camaroes(Figurinha* figurinha, Album* album){
+void camaroes(Figurinha* figurinha, Album* album,int quant_fig){
    printf("                                       _   _ \n");
    printf("                                     /' \\/' )\n");
    printf("                                    (_/\\__/'\n");
@@ -443,7 +443,7 @@ void camaroes(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Cameroon');
 }
-void portugal(Figurinha* figurinha, Album* album){
+void portugal(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  ___    _____  _   _  ___    _____  _  \n");
    printf("(  _`\\ (  _  )|  _`\\ (_   _)( ) ( )(  _`\\ (  _  )( ) \n");
    printf("| |_) )| ( ) || (_) )  | |  | | | || ( (_)| (_) || | \n");
@@ -453,7 +453,7 @@ void portugal(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Portugal');
 }
-void gana(Figurinha* figurinha, Album* album){
+void gana(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  _   _  _____ \n");
    printf("(  _`\\ (  _  )( ) ( )(  _  )\n");
    printf("| ( (_)| (_) || `\\| || (_) |\n");
@@ -463,7 +463,7 @@ void gana(Figurinha* figurinha, Album* album){
 
    mostra(figurinhas, album, 20, 278, 'Ghana');
 }
-void uruguai(Figurinha* figurinha, Album* album){
+void uruguai(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" _   _  ___    _   _  ___    _   _  _____  _ \n");
    printf("( ) ( )|  _`\\ ( ) ( )(  _`\\ ( ) ( )(  _  )(_)\n");
    printf("| | | || (_) )| | | || ( (_)| | | || (_) || |\n");
@@ -474,7 +474,7 @@ void uruguai(Figurinha* figurinha, Album* album){
    mostra(figurinhas, album, 20, 278, 'Uruguay');
 }
 
-void coreia_do_sul(Figurinha* figurinha, Album* album){
+void coreia_do_sul(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  ___    ___    _  _____     ___    _____     ___    _   _  _ \n");
    printf("(  _`\\ (  _  )|  _`\\ (  _`\\ (_)(  _  )   (  _`\\ (  _  )   (  _`\\ ( ) ( )( )    \n");
    printf("| ( (_)| ( ) || (_) )| (_(_)| || (_) |   | | ) || ( ) |   | (_(_)| | | || |    \n");
@@ -484,7 +484,7 @@ void coreia_do_sul(Figurinha* figurinha, Album* album){
     
    mostra(figurinhas, album, 20, 278, 'Korea Republic');
 }
-void museu_da_fifa(Figurinha* figurinha, Album* album){
+void museu_da_fifa(Figurinha* figurinha, Album* album,int quant_fig){
    printf("        _   _  ___    ___    _   _     ___    _____     ___    _  ___    _____ \n");
    printf("/'\\_/`\\( ) ( )(  _`\\ (  _`\\ ( ) ( )   (  _`\\ (  _  )   (  _`\\ (_)(  _`\\ (  _  )\n");
    printf("|     || | | || (_(_)| (_(_)| | | |   | | ) || (_) |   | (_(_)| || (_(_)| (_) |\n");
@@ -494,7 +494,7 @@ void museu_da_fifa(Figurinha* figurinha, Album* album){
                                                                           
    mostra(figurinhas, album, 11, 278, 'FIFA Museum');
 }
-void coca_cola(Figurinha* figurinha, Album* album){
+void coca_cola(Figurinha* figurinha, Album* album,int quant_fig){
    printf(" ___    _____  ___    _____          ___    _____  _      _____ \n");
    printf("(  _`\\ (  _  )(  _`\\ (  _  )        (  _`\\ (  _  )( )    (  _  )\n");
    printf("| ( (_)| ( ) || ( (_)| (_) | ______ | ( (_)| ( ) || |    | (_) |\n");
@@ -505,7 +505,7 @@ void coca_cola(Figurinha* figurinha, Album* album){
    mostra(figurinhas, album, 20, 278, 'CocanormalCola Team Believers');
 }
 
-void folhear_album(Figurinha* figurinha, Album* album){
+void folhear_album(Figurinha* figurinha, Album* album, int quant_fig){
   int seletor;
   printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
   printf("Qual album deseja folhear?");
@@ -542,182 +542,182 @@ void folhear_album(Figurinha* figurinha, Album* album){
             break;
          case 1:
             system("clear");
-            simbolos(figurinha, album);
+            simbolos(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 2:
             system("clear");
-            estadios_e_bola(figurinha, album);
+            estadios_e_bola(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 3:
             system("clear");
-            qatar(figurinha, album);
+            qatar(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 4:
             system("clear");
-            equador(figurinha, album);
+            equador(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 5:
             system("clear");
-            senegal(figurinha, album);
+            senegal(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 6:
             system("clear");
-            holanda(figurinha, album);
+            holanda(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 7:
             system("clear");
-            inglaterra(figurinha, album);
+            inglaterra(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 8:
             system("clear");
-            ira(figurinha, album);
+            ira(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 9:
             system("clear");
-            estados_unidos(figurinha, album);
+            estados_unidos(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 10:
             system("clear");
-            pais_de_gales(figurinha, album);
+            pais_de_gales(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 11:
             system("clear");
-            argentina(figurinha, album);
+            argentina(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 12:
             system("clear");
-            arabia_saudita(figurinha, album);
+            arabia_saudita(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 13:
             system("clear");
-            mexico(figurinha, album);
+            mexico(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 14:
             system("clear");
-            polonia(figurinha, album);
+            polonia(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 15:
             system("clear");
-            franca(figurinha, album);
+            franca(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 16:
             system("clear");
-            australia(figurinha, album);
+            australia(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 17:
             system("clear");
-            dinamarca(figurinha, album);
+            dinamarca(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 18:
             system("clear");
-            tunisia(figurinha, album);
+            tunisia(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 19:
             system("clear");
-            espanha(figurinha, album);
+            espanha(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 20:
             system("clear");
-            costa_rica(figurinha, album);
+            costa_rica(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 21:
             system("clear");
-            alemanha(figurinha, album);
+            alemanha(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 22:
             system("clear");
-            japao(figurinha, album);
+            japao(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 23:
             system("clear");
-            belgica(figurinha, album);
+            belgica(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 24:
             system("clear");
-            canada(figurinha, album);
+            canada(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 25:
             system("clear");
-            marrocos(figurinha, album);
+            marrocos(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 26:
             system("clear");
-            croacia(figurinha, album);
+            croacia(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 27:
             system("clear");
-            brasil(figurinha, album);
+            brasil(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 28:
             system("clear");
-            servia(figurinha, album);
+            servia(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 29:
             system("clear");
-            suica(figurinha, album);
+            suica(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 30:
             system("clear");
-            camaroes(figurinha, album);
+            camaroes(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 31:
             system("clear");
-            portugal(figurinha, album);
+            portugal(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 32:
             system("clear");
-            gana(figurinha, album);
+            gana(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 33:
             system("clear");
-            uruguai(figurinha, album);
+            uruguai(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 34:
             system("clear");
-            coreia_do_sul(figurinha, album);
+            coreia_do_sul(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 35:
             system("clear");
-            museu_da_fifa(figurinha, album);
+            museu_da_fifa(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
          case 36:
             system("clear");
-            coca_cola(figurinha, album);
+            coca_cola(figurinha, album,quant_fig);
             printf(reset"<- (a)                 (d) ->         (s) Sair\n");
             break;
 
@@ -848,7 +848,7 @@ int main(){
     scanf("%d", &menu);
     switch (menu){
       case 1:
-        folhear_album(figurinha,album);
+        folhear_album(figurinha,album, quant_fig);
         break;
       case 2:
         comprar_envelope();
