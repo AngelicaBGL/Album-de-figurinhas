@@ -835,20 +835,29 @@ int main(){
   Album album[0];
   Figurinha figurinha[0];
   int menu=1, menualbum=1, quant_alb, quant_fig=0;
+  int moedas=200;
 
   printf("Quantos albuns gostaria de cadastrar?\n");
   scanf("%d", &quant_alb);
   
   void *realloc(void *album, unsigned int quant_alb);
 
-  printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
-  printf("\tBEM-VINDO AO ALBUM\n\tO que voce gostaria de fazer?\n");
   while (menu!=0){
-    printf("\t1. Folhear o album\n\t2. Comprar envelope\n\t3. Mostrar figurinha nao coladas\n\t4. Mostrar dados do album\n\t5. Configurar Albuns\n\t6. Cadastar Figurinha\n\t0. Sair do album\n\tEscolha a opcao: ");
-    scanf("%d", &menu);
-    switch (menu){
+   printf(YEL"Moedas %d\n", moedas);
+   printf(MAG" =========================================================================\n");
+   printf(MAG"||"WHT"                             Álbum da Copa 2022                        "MAG"||\n");
+   printf(MAG" =========================================================================\n"); 
+   printf(MAG"\nMenu:\n\n");
+   printf(WHT"\t1 - Folhear Álbum\n\t2 - Comprar Envelope\n\t3 - Figurinhas Não Coladas\n");
+   printf("\t4 - Dados do Álbum\n\t5 - Configurara Álbum\n\t6 - Cadastrar Figurinha\n");
+   printf("\t7 - Ganhar Moedas\n\t8 - Trocar Figurinha Repetida\n"RED"\t0 - Sair\n\n");
+   printf(reset"Digite a opção desejada: ");  
+   scanf("%d", &menu);
+   switch (menu){
+      case 0:
+         break;
       case 1:
-        folhear_album(figurinha,album, quant_fig);
+        folhear_album(figurinha,album);
         break;
       case 2:
         comprar_envelope();
@@ -876,8 +885,17 @@ int main(){
       case 6:
         quant_fig = cadastrar_figurinha(figurinha, quant_fig);
         break;
+      case 7:
+         ganhar_moedas(&moedas);
+         break;
+      case 8:
+         //trocar_figurinha();
+         break;
+      default:
+         printf("Opção inválida! Tente novamente!\n");
     }
   }
+
 
   return 0;
 }
