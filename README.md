@@ -3,10 +3,7 @@
 Sistema de gerenciamento de um Álbum de Figurinhas da Copa do Mundo 2022, utilizando a linguagem C
 
 Ideias criativas:
-* Criar uma banca para a troca de figurinhas, o usuário irá dar uma figurinha repetida e a banda devolverá uma nova, porém aleatoriamente a banca não irá retornar uma figurinha. Ela poderá entregar uma figurinha de um álbum especial com temática de Apucarana e da UTFPR.
+* Criar uma banca para a troca de figurinhas, o usuário irá dar uma figurinha repetida e a banda devolverá uma nova, porém aleatoriamente a banca não irá retornar uma figurinha. 
 
-* Quando completar um time, irá tocar uma música relacionada ao país. Serão músicas divertidas (Ex: Brasil - Evidências).
-
-* O usuário pode pesquisar um país participante e aparecerá curiosidades sobre esse país, assim como dados dos jogadores.
-
-* Tocar uma música suave de fundo.
+* O usuário irá começar com uma quantia de dinheiro, para ir comprando os envelopes.
+* Para ganhar mais moedas, o usuário poderá jogar alguns mini jogos.
