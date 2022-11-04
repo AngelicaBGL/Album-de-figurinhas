@@ -889,7 +889,7 @@ int main(){
          ganhar_moedas(&moedas);
          break;
       case 8:
-         //trocar_figurinha();
+         //trocar_figurinha(figurinha_repetida, figurinhas, album);
          break;
       default:
          printf("Opção inválida! Tente novamente!\n");
