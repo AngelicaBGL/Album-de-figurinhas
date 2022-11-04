@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <time.h>
 #include <unistd.h>
 #include <ctype.h>
@@ -57,28 +57,37 @@ typedef struct
 } Album;
 
 void limpa_tela(){
-   #ifdef LINUX
+   #ifdef linux
       system("clear");
-   #elif WIN64
+   #elif _WIN64
       system("clc");
+   #else
+
+   #endif
    
 }
 void limpa_buffer(){
-   #ifdef LINUX
+   #ifdef linux
       __fpurge(stdin);
-   #elif WIN64
+   #elif _WIN64
       setbuf(stdin,NULL);
+   #else
+
+   #endif
 }
 void tempo(){
-   #ifdef LINUX
+   #ifdef linux
       usleep(5000000);
-   #elif WIN64
+   #elif _WIN64
       Sleep(5000);
+   #else
+
+   #endif
 }
 
 
-void limpar_struct(Figurinha figurinha[]){
-  for (int i=0; i<5; i++){
+void limpar_struct(Figurinha figurinha[], int quant_fig){
+  for (int i=0; i<quant_fig; i++){
     if (strcmp(figurinha[i].codigo, "0000000000")!=0){
       strcpy(figurinha[i].codigo, "0000000000");
     }
@@ -878,15 +887,10 @@ void figurinhas_repetidas_ou_nao_coladas(Album album){
 }
 
 int cadastrar_figurinha(Figurinha* figurinha, int quant_fig){
-  int amais, aux;
-  printf("Quantas figurinhas vc deseja cadastrar?\n");
-  scanf("%d", &amais);
-  quant_fig = quant_fig + amais;
-  aux = quant_fig * sizeof(Figurinha);
-  figurinha = realloc(figurinha, aux);
-  limpar_struct(figurinha);
-  for (int i=0; i<quant_fig; i++){
-    if (strcmp(figurinha[i].codigo, "00000000000")==0){
+   int amais;
+   printf("Quantas figurinhas vc deseja cadastrar?\n");
+   scanf("%d", &amais);
+   for (int i=quant_fig; i<quant_fig+amais; i++){
       fflush(stdin);
       printf("Digite o codigo da figurinha: ");
       fgets(figurinha[i].codigo, 5, stdin);
@@ -900,10 +904,13 @@ int cadastrar_figurinha(Figurinha* figurinha, int quant_fig){
       printf("Digite o tipo da figurinha: ");
       fgets(figurinha[i].tipo, 10, stdin);
       fflush(stdin);
-    }
   }
 
+  quant_fig = quant_fig + amais;
+  void *realloc(void *figurinha, unsigned int quant_fig);
+
   return quant_fig;
+
 
 }
 
@@ -934,7 +941,7 @@ int forca(){
 
 
    do{
-      limpa_tela();
+      limpa_tela();;
       errado=0;
       printf("  _______       \n");
       printf(" |/      |      \n");
@@ -1019,8 +1026,8 @@ int memoria(){
    for(int i=0; i<5; i++){
       printf("%s\n",palavras[i]);
    }
-   tempo();
-   limpa_tela();
+   Sleep(5000);
+   limpa_tela();;
    printf("Digite as palavras na ordem em que apareceram:\n");
    for(int i=0; i<5; i++){
       printf("Palavra %d: ", i+1);
