@@ -1024,7 +1024,7 @@ int memoria(){
    for(int i=0; i<5; i++){
       printf("%s\n",palavras[i]);
    }
-   Sleep(5000);
+   tempo();
    limpa_tela();;
    printf("Digite as palavras na ordem em que apareceram:\n");
    for(int i=0; i<5; i++){
