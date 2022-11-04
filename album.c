@@ -742,7 +742,7 @@ void dados_album(Album album[]){
   return;
 }
 
-void comprar_envelope(){
+void comprar_envelope(Figurinha* figurinha,Album* album){
   srand(time(NULL));
 
     // se colocar mais de um album temos q fazer um if e switch pra escolher o album
@@ -1151,7 +1151,7 @@ int main(){
          
          if(moedas>4){
             moedas = moedas - 4;
-            comprar_envelope();
+            comprar_envelope(figurinhas, album);
          }else{
             printf("Você não possui moedas suficiente!\n");
          }
