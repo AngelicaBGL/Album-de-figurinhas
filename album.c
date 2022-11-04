@@ -32,6 +32,7 @@ typedef struct{
 
 typedef struct{
   char figurinhas_coladas[678][10];
+  char figurinhas_nao_coladas[678][10]
   char figurinhas_faltantes[678][10];
   char figurinhas_repetidas[678][10]
   char proprietario[50];
