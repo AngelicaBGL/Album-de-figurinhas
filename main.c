@@ -1090,9 +1090,15 @@ void exportar_dados(Album album){
       fprintf(arq, "Proprietario: %s\n",album.proprietario);
       fprintf(arq,"Dinheiro gasto: %d\n", album.dinheiro_gasto);
       fprintf(arq,"Porcentagem: %.2f\n", album.porcentagem_do_album);
+      fprintf(arq, "Figurinhas coladas:\n");
       fprintf(arq,"Nro, Titulo, Secao, Tipo\n");
       for(int i = 0; i< album.posicao_no_album; i++){
          fprintf(arq, "%s,%s,%s,%s\n", album.fig_coladas[i].codigo,album.fig_coladas[i].titulo,album.fig_coladas[i].secao,album.fig_coladas[i].tipo);
+      }
+      fprintf(arq, "\nFigurinhas repetidas ou não coladas:\n");
+      fprintf(arq,"Nro, Titulo, Secao, Tipo\n");
+      for(int i = 0; i< album.posicao_repetidas_ou_nao_coladas; i++){
+         fprintf(arq, "%s,%s,%s,%s\n", album.fig_repetidas_ou_nao_coladas[i].codigo,album.fig_repetidas_ou_nao_coladas[i].titulo,album.fig_repetidas_ou_nao_coladas[i].secao,album.fig_repetidas_ou_nao_coladas[i].tipo);
       }
 
 
