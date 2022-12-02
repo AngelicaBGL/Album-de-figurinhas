@@ -11,7 +11,7 @@ void dados_album(Album album, int quant_fig){
    //exibindo na tela os dados do álbum
    printf("Nome do proprietario do album:\t%s\n",album.proprietario);
    printf("Total de figurinhas coladas:\t%d\n", album.posicao_no_album);
-   printf("Total de figurinhas faltantes:\t%d\n", quant_fig - album.posicao_faltantes);
+   printf("Total de figurinhas faltantes:\t%d\n", album.posicao_faltantes);
    printf("Porcentagem de conclusao do album:\t%f%%\n", album.porcentagem_do_album);
    printf("Total gasto com envelopes:\t%d\n", album.dinheiro_gasto);
 
