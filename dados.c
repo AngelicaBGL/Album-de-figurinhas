@@ -58,7 +58,7 @@ void iniciar_programa(Album *album, int *ptr_auxiliar)
 
          //dados iniciais do album
          album->moedas = 200;
-         album->posicao_faltantes = 278;
+         album->posicao_faltantes = 678;
          album->porcentagem_do_album = 0;
          album->dinheiro_gasto = 0;
       }
