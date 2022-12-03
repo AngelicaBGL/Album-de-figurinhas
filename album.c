@@ -152,6 +152,7 @@ void cola_figurinha(Album *album, Figurinha *figurinha, char repetida[]){
          album->fig_coladas = realloc(album->fig_coladas, (album->posicao_no_album + 1)* sizeof(Figurinha));
          album->fig_coladas[album->posicao_no_album] = auxiliar;
          album->posicao_no_album++;
+         album->posicao_faltantes--;
       }else{
          printf("Essa figurinha é repetida!\n");
       }
@@ -244,6 +245,7 @@ void trocar_figurinha(char repetida[], Figurinha* figurinha, Album* album){
             printf("| %-9s | %-39s | %-39s | %-14s |\n",album->fig_coladas[album->posicao_no_album].codigo,album->fig_coladas[album->posicao_no_album].titulo,album->fig_coladas[album->posicao_no_album].secao,album->fig_coladas[album->posicao_no_album].tipo);
             
             album->posicao_no_album++;
+            album->posicao_faltantes--;
             break;
             }//if
          }//if sorteio
